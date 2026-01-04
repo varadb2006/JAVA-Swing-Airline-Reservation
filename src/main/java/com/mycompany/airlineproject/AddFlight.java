@@ -37,7 +37,7 @@ public class AddFlight extends javax.swing.JInternalFrame {
                 Connection con;
                 PreparedStatement pre;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+                con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
                 pre = con.prepareStatement("Select MAX(FlightID) from Flight");
                 ResultSet rs = pre.executeQuery();
                 rs.next();
@@ -294,7 +294,7 @@ public class AddFlight extends javax.swing.JInternalFrame {
             Connection con;
             PreparedStatement pre;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
             pre = con.prepareStatement("insert into flight(FlightID, FlightName, Arrival, Departure, Duration,Seats, Fare, Date)values(?,?,?,?,?,?,?,?)");
             pre.setString(1, FlightID);
             pre.setString(2, Name);

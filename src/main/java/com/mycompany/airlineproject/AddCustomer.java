@@ -37,7 +37,7 @@ public class AddCustomer extends javax.swing.JInternalFrame {
             Connection con;
             PreparedStatement pre;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
             pre = con.prepareStatement("Select MAX(CustomerID) from Customer");
             ResultSet rs = pre.executeQuery();
             rs.next();
@@ -346,7 +346,7 @@ public class AddCustomer extends javax.swing.JInternalFrame {
             Connection con;
             PreparedStatement pre;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "unmae", "password");
             pre = con.prepareStatement("insert into customer(CustomerID,FirstName, LastName,Passport, NationalID, Address, Contact, Gender, DOB)values(?,?,?,?,?,?,?,?,?)");
             pre.setString(1,CustomerID);
             pre.setString(2,FirstName);

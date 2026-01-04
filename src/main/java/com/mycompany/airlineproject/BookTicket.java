@@ -43,7 +43,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
                 Connection con;
                 PreparedStatement pre;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+                con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
                 pre = con.prepareStatement("Select MAX(TicketID) from ticket");
                 ResultSet rs = pre.executeQuery();
                 rs.next();
@@ -511,7 +511,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
             Connection con;
             PreparedStatement pre;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
             pre = con.prepareStatement("select * from customer where CustomerID=?");
             pre.setString(1, Customer);
             
@@ -549,7 +549,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
             PreparedStatement pre;          
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
             pre = con.prepareStatement("select * from flight where Arrival=? and Departure=?");
             pre.setString(1, Arrival);
             pre.setString(2,Departure);
@@ -593,7 +593,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
             Connection con;
             PreparedStatement pre;          
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
             
             pre = con.prepareStatement("select fare from flight where FlightID=?");
             pre.setString(1, flightID);
@@ -637,7 +637,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
             Connection con;
             PreparedStatement pre;          
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "root", "root");
+            con =DriverManager.getConnection("jdbc:mysql://localhost/airline_project", "uname", "password");
             
             pre = con.prepareStatement("insert into ticket(TicketID, FlightID,CustomerId, Arrival, Departure,FirstName, LastName, Gender, Contact)values(?,?,?,?,?,?,?,?,?)");
             pre.setString(1,TicketID);
